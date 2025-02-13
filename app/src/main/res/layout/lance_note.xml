@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ShowDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+
+        <ImageButton
+            android:id="@+id/artka1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/zagalovok1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:hint="@string/app_name2"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <ImageButton
+            android:id="@+id/prinyal1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/galochka1"
+            android:scaleType="centerCrop"
+            android:tint="@color/black" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/dlyadata1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="До:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/dlyadata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <EditText
+            android:id="@+id/opisaniye1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="16dp"
+            android:hint="Описание"
+            android:gravity="top|start"
+            android:backgroundTint="@android:color/transparent"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

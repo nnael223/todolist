@@ -1,5 +1,9 @@
 package com.example.mytodolist;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class Note {
     private String title;
     private String content;
@@ -9,8 +13,17 @@ public class Note {
         this.title = title;
         this.content = content;
         this.date = date;
+
+
     }
 
+public void setDate(String date) {
+        this.date = date ;
+}
+
+    public String getDate() {
+        return date;
+    }
     public String getTitle() {
         return title;
     }
@@ -27,11 +40,5 @@ public class Note {
         this.content = content;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 }
+
