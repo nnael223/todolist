@@ -32,23 +32,8 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/lanceButton1"
-                android:layout_width="32sp"
-                android:layout_height="32sp"
-                android:layout_marginEnd="8sp"
-                android:tint="@color/black"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/delett2" />
 
 
-            <ImageButton
-                android:id="@+id/ydalitButton1"
-                android:layout_width="32sp"
-                android:layout_height="32sp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/deletee"
-                android:tint="@color/black"/>
 
             <TextView
                 android:id="@+id/textView32"

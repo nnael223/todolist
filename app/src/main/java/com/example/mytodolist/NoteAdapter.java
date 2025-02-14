@@ -50,12 +50,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         return notes.size();
     }
 
-    public void removeNote(int position) {
-        if (position >= 0 && position < notes.size()) {
-            notes.remove(position);
-            notifyItemRemoved(position);
-        }
-    }
+
 
     public static class NoteViewHolder extends RecyclerView.ViewHolder {
         private TextView titleTextView,textView22;
@@ -67,8 +62,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.titleTextView1);
-            lanceButton = itemView.findViewById(R.id.lanceButton1);
-            ydalitButton = itemView.findViewById(R.id.ydalitButton1);
             textView22 = itemView.findViewById(R.id.textView22); // для даты
         }
 
@@ -82,50 +75,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                     listener.onItemClick(note);
                 }
             });
-            lanceButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent editintent = new Intent(itemView.getContext(), LanceNoteActivity.class);  // itemView для поиска оказывается
 
-                    editintent.putExtra("notePosition",getAdapterPosition());
-                    editintent.putExtra("klyuchtitla",note.getTitle());
-                    editintent.putExtra("opisaniye",note.getContent());
-                    editintent.putExtra("date11", note.getDate());
 
-                    ((Activity) itemView.getContext()).startActivityForResult(editintent,100);
-                }
-            });
-            ydalitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION) {
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
-                        builder.setTitle("Удалить")
-                                .setMessage("Вы действительно хотите удалить?")
-                                .setCancelable(false)
-                                .setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        adapter.removeNote(position);
-                                    }
-                                })
-                                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
-                        }
-
-                    }
-                });
-            }
 
 
         }
     }
+}
 

@@ -18,7 +18,7 @@
         private RecyclerView recyclerView;
         private NoteAdapter adapter;
         private ArrayList<Note> notes;
-        private TextView emptyView1, emptyView2;
+        private TextView emptyView1;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@
 
             recyclerView = findViewById(R.id.recyclerView);
             emptyView1 = findViewById(R.id.emptyView1);
-            emptyView2 = findViewById(R.id.emptyView2);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
             notes = new ArrayList<>();
@@ -45,7 +44,6 @@
             }, MainActivity.this);
             recyclerView.setAdapter(adapter);
 
-            shpionhaha();
 
             AppCompatImageButton addButton = findViewById(R.id.addNote);
             addButton.setOnClickListener(new View.OnClickListener() {
@@ -72,37 +70,10 @@
                 notes.add(newNote);
                 adapter.notifyItemInserted(notes.size() - 1);
             }
-            shpionhaha();
 
-
-            if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
-                String updatedtitle = data.getStringExtra("klyuchtitla1");
-                String updatedcontent = data.getStringExtra("opisanie1");
-                String updatedate = data.getStringExtra("datenew");
-                int position = data.getIntExtra("notePosition", -1);
-
-
-                if (position != -1) {
-                    Note updatedNote = notes.get(position);
-                    updatedNote.setTitle(updatedtitle);
-                    updatedNote.setContent(updatedcontent);
-                    updatedNote.setDate(updatedate);
-                }
-
-
-                adapter.notifyItemChanged(position);
-            }
         }
 
-        private void shpionhaha() {
-            if (notes.isEmpty()) {
-                emptyView2.setVisibility(View.VISIBLE);
-                emptyView1.setVisibility(View.INVISIBLE);
-            } else {
-                emptyView2.setVisibility(View.INVISIBLE);
-                emptyView1.setVisibility(View.VISIBLE);
-            }
-        }
+
     }
 
 
